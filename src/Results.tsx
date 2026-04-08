@@ -37,6 +37,21 @@ export function Results({ scores, onRestart }: ResultsProps) {
         </div>
       </div>
 
+      <div className={styles.archetypes}>
+        <div className={styles.archetypeItem}>
+          <img src="/icarus.png" alt="Icarus" className={styles.archetypeImage} />
+          <span className={styles.archetypeLabel}>Icarus</span>
+        </div>
+        <div className={styles.archetypeItem}>
+          <img src="/sisyphus.png" alt="Sisyphus" className={styles.archetypeImage} />
+          <span className={styles.archetypeLabel}>Sisyphus</span>
+        </div>
+        <div className={styles.archetypeItem}>
+          <img src="/narcissus.jpg" alt="Narcissus" className={styles.archetypeImage} />
+          <span className={styles.archetypeLabel}>Narcissus</span>
+        </div>
+      </div>
+
       <div className={styles.restartRow}>
         <button className={styles.restartButton} onClick={onRestart}>
           Take Quiz Again
