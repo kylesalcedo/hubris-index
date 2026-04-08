@@ -8,10 +8,12 @@ interface ResultsProps {
   onRestart: () => void
 }
 
+const basePath = import.meta.env.BASE_URL
+
 const archetypeImages: Record<string, string> = {
-  icarus: '/icarus.jpg',
-  sisyphus: '/sisyphus.jpg',
-  narcissus: '/narcissius.jpg',
+  icarus: `${basePath}icarus.jpg`,
+  sisyphus: `${basePath}sisyphus.jpg`,
+  narcissus: `${basePath}narcissius.jpg`,
 }
 
 export function Results({ scores, onRestart }: ResultsProps) {
