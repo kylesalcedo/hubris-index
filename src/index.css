@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --card-bg: #141414;
+  --card-border: #262626;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --primary: #d4a574;
+  --primary-hover: #c4956a;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}

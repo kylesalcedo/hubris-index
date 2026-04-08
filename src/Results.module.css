@@ -1,0 +1,88 @@
+.wrapper {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 3rem;
+  }
+}
+
+.interpretation {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.interpretation h2 {
+  font-size: 1.5rem;
+}
+
+.interpretation p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.scores {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.scoreItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scoreLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.scoreValue {
+  font-size: 1.875rem;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.restartRow {
+  display: flex;
+  justify-content: center;
+}
+
+.restartButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.restartButton:hover {
+  border-color: var(--text-muted);
+  background: var(--card-bg);
+}
