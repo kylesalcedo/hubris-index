@@ -34,7 +34,7 @@ export default function App() {
   useEffect(() => {
     if (started && !scores) {
       const basePath = import.meta.env.BASE_URL
-      const images = [`${basePath}ternary-plot.jpeg`, '/icarus.png', '/sisyphus.png', '/narcissus.jpg']
+      const images = [`${basePath}ternary-plot.jpeg`, '/icarus.jpg', '/sisyphus.jpg', '/narcissius.jpg']
       images.forEach((src) => {
         const img = new Image()
         img.src = src
