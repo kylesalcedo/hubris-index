@@ -8,9 +8,9 @@ export function TernaryPlot({ scores }: TernaryPlotProps) {
   const imageWidth = 922
   const imageHeight = 898
 
-  const top = { x: 461, y: 127 }
-  const bottomLeft = { x: 78, y: 738 }
-  const bottomRight = { x: 840, y: 738 }
+  const top = { x: 439, y: 189 }
+  const bottomLeft = { x: 131, y: 690 }
+  const bottomRight = { x: 738, y: 690 }
 
   const pointX = bottomLeft.x * scores.narcissus + bottomRight.x * scores.sisyphus + top.x * scores.icarus
   const pointY = bottomLeft.y * scores.narcissus + bottomRight.y * scores.sisyphus + top.y * scores.icarus
