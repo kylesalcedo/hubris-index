@@ -58,13 +58,16 @@ export function QuizQuestion({
           ))}
         </div>
 
-        {canGoBack && onBack && (
-          <div className={styles.backSection}>
-            <button className={styles.backButton} onClick={onBack}>
-              &larr; Previous Question
-            </button>
-          </div>
-        )}
+        <div className={`${styles.backSection} ${canGoBack ? styles.backVisible : styles.backHidden}`}>
+          <button
+            className={styles.backButton}
+            onClick={onBack}
+            disabled={!canGoBack}
+            tabIndex={canGoBack ? 0 : -1}
+          >
+            &larr; Back
+          </button>
+        </div>
       </div>
     </div>
   )
