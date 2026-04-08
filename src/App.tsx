@@ -40,10 +40,11 @@ export default function App() {
     return (
       <main className={styles.main}>
         <div className={styles.landing}>
-          <h1 className={styles.title}>Which Myth Lives in You?</h1>
+          <h1 className={styles.title}>What is your mythic flaw?</h1>
           <p className={styles.subtitle}>
-            33 questions. Three archetypes. Discover whether you burn like Icarus,
-            endure like Sisyphus, or reflect like Narcissus.
+            33 questions. Three archetypes. Find your mortal compass — discover
+            whether you burn like Icarus, endure like Sisyphus, or reflect like
+            Narcissus.
           </p>
           <button className={styles.startButton} onClick={() => setStarted(true)}>
             Begin the Quiz

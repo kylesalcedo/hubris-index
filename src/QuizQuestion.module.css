@@ -99,9 +99,18 @@
 .optionGreen2 { background: #15803d; border-color: #15803d; }
 
 .backSection {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--card-border);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.backVisible {
+  opacity: 1;
+}
+
+.backHidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .backButton {
@@ -109,11 +118,19 @@
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-family: inherit;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+  transition: opacity 0.15s, color 0.15s;
 }
 
 .backButton:hover {
   color: var(--text);
+  opacity: 1;
+}
+
+.backButton:disabled {
+  cursor: default;
 }
