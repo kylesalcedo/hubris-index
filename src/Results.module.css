@@ -18,14 +18,17 @@
   border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 2rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
   .card {
     padding: 3rem;
+    padding-top: 6rem;
   }
 }
 
@@ -53,15 +56,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  text-align: center;
 }
 
 .scoreItem {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  cursor: default;
 }
 
 .scoreLabel {
@@ -72,30 +74,6 @@
 .scoreValue {
   font-size: 1.875rem;
   font-family: 'Playfair Display', Georgia, serif;
-}
-
-.scoreImageWrap {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 10;
-}
-
-.scoreItem:hover .scoreImageWrap {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-8px);
-}
-
-.scoreImage {
-  width: 160px;
-  height: 180px;
-  object-fit: contain;
-  filter: brightness(0.9);
-  border-radius: 0.5rem;
 }
 
 .restartRow {
