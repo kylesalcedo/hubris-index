@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
@@ -50,9 +56,12 @@
 }
 
 .scoreItem {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
+  cursor: default;
 }
 
 .scoreLabel {
@@ -65,53 +74,28 @@
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-.archetypes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem 0;
+.scoreImageWrap {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
 }
 
-.archetypeItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.archetypeImage {
-  width: 100%;
-  max-width: 200px;
-  height: 220px;
-  object-fit: contain;
-  filter: grayscale(0.2) brightness(0.9);
-  opacity: 0.85;
-  transition: opacity 0.3s, filter 0.3s;
-}
-
-.archetypeImage:hover {
+.scoreItem:hover .scoreImageWrap {
   opacity: 1;
-  filter: grayscale(0) brightness(1);
+  transform: translateX(-50%) translateY(-8px);
 }
 
-.archetypeLabel {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 640px) {
-  .archetypes {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .archetypeImage {
-    max-width: 160px;
-    height: 180px;
-  }
+.scoreImage {
+  width: 160px;
+  height: 180px;
+  object-fit: contain;
+  filter: brightness(0.9);
+  border-radius: 0.5rem;
 }
 
 .restartRow {
