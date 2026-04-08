@@ -9,9 +9,9 @@ interface ResultsProps {
 }
 
 const archetypeImages: Record<string, string> = {
-  icarus: '/icarus.png',
-  sisyphus: '/sisyphus.png',
-  narcissus: '/narcissus.jpg',
+  icarus: '/icarus.jpg',
+  sisyphus: '/sisyphus.jpg',
+  narcissus: '/narcissius.jpg',
 }
 
 export function Results({ scores, onRestart }: ResultsProps) {
