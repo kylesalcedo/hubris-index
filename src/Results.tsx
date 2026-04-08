@@ -8,14 +8,6 @@ interface ResultsProps {
   onRestart: () => void
 }
 
-const basePath = import.meta.env.BASE_URL
-
-const archetypeImages: Record<string, string> = {
-  icarus: `${basePath}icarus.jpg`,
-  sisyphus: `${basePath}sisyphus.jpg`,
-  narcissus: `${basePath}narcissius.jpg`,
-}
-
 export function Results({ scores, onRestart }: ResultsProps) {
   const interpretation = getInterpretation(scores)
 
@@ -30,19 +22,18 @@ export function Results({ scores, onRestart }: ResultsProps) {
         </div>
 
         <div className={styles.scores}>
-          {(['icarus', 'sisyphus', 'narcissus'] as const).map((key) => (
-            <div key={key} className={styles.scoreItem}>
-              <div className={styles.scoreLabel}>{key.charAt(0).toUpperCase() + key.slice(1)}</div>
-              <div className={styles.scoreValue}>{Math.round(scores[key] * 100)}%</div>
-              <div className={styles.scoreImageWrap}>
-                <img
-                  src={archetypeImages[key]}
-                  alt={key}
-                  className={styles.scoreImage}
-                />
-              </div>
-            </div>
-          ))}
+          <div className={styles.scoreItem}>
+            <div className={styles.scoreLabel}>Icarus</div>
+            <div className={styles.scoreValue}>{Math.round(scores.icarus * 100)}%</div>
+          </div>
+          <div className={styles.scoreItem}>
+            <div className={styles.scoreLabel}>Sisyphus</div>
+            <div className={styles.scoreValue}>{Math.round(scores.sisyphus * 100)}%</div>
+          </div>
+          <div className={styles.scoreItem}>
+            <div className={styles.scoreLabel}>Narcissus</div>
+            <div className={styles.scoreValue}>{Math.round(scores.narcissus * 100)}%</div>
+          </div>
         </div>
       </div>
 
