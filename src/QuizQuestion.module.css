@@ -54,14 +54,16 @@
 }
 
 .questionText h2 {
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
   text-wrap: balance;
 }
 
 @media (min-width: 768px) {
   .questionText h2 {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -92,11 +94,11 @@
   transform: scale(0.99);
 }
 
-.optionRed1 { background: #dc2626; border-color: #dc2626; }
-.optionRed2 { background: #f87171; border-color: #f87171; }
-.optionNeutral { background: #9ca3af; border-color: #9ca3af; }
-.optionGreen1 { background: #22c55e; border-color: #22c55e; }
-.optionGreen2 { background: #15803d; border-color: #15803d; }
+.optionRed1 { background: #3a3a3a; border-color: #3a3a3a; }
+.optionRed2 { background: #4a4a4a; border-color: #4a4a4a; }
+.optionNeutral { background: #5a5a5a; border-color: #5a5a5a; }
+.optionGreen1 { background: #4a4a4a; border-color: #4a4a4a; }
+.optionGreen2 { background: #3a3a3a; border-color: #3a3a3a; }
 
 .backSection {
   margin-top: 1.5rem;

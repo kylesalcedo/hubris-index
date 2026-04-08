@@ -8,6 +8,12 @@ interface ResultsProps {
   onRestart: () => void
 }
 
+const archetypeImages: Record<string, string> = {
+  icarus: '/icarus.png',
+  sisyphus: '/sisyphus.png',
+  narcissus: '/narcissus.jpg',
+}
+
 export function Results({ scores, onRestart }: ResultsProps) {
   const interpretation = getInterpretation(scores)
 
@@ -22,33 +28,19 @@ export function Results({ scores, onRestart }: ResultsProps) {
         </div>
 
         <div className={styles.scores}>
-          <div className={styles.scoreItem}>
-            <div className={styles.scoreLabel}>Icarus</div>
-            <div className={styles.scoreValue}>{Math.round(scores.icarus * 100)}%</div>
-          </div>
-          <div className={styles.scoreItem}>
-            <div className={styles.scoreLabel}>Sisyphus</div>
-            <div className={styles.scoreValue}>{Math.round(scores.sisyphus * 100)}%</div>
-          </div>
-          <div className={styles.scoreItem}>
-            <div className={styles.scoreLabel}>Narcissus</div>
-            <div className={styles.scoreValue}>{Math.round(scores.narcissus * 100)}%</div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.archetypes}>
-        <div className={styles.archetypeItem}>
-          <img src="/icarus.png" alt="Icarus" className={styles.archetypeImage} />
-          <span className={styles.archetypeLabel}>Icarus</span>
-        </div>
-        <div className={styles.archetypeItem}>
-          <img src="/sisyphus.png" alt="Sisyphus" className={styles.archetypeImage} />
-          <span className={styles.archetypeLabel}>Sisyphus</span>
-        </div>
-        <div className={styles.archetypeItem}>
-          <img src="/narcissus.jpg" alt="Narcissus" className={styles.archetypeImage} />
-          <span className={styles.archetypeLabel}>Narcissus</span>
+          {(['icarus', 'sisyphus', 'narcissus'] as const).map((key) => (
+            <div key={key} className={styles.scoreItem}>
+              <div className={styles.scoreLabel}>{key.charAt(0).toUpperCase() + key.slice(1)}</div>
+              <div className={styles.scoreValue}>{Math.round(scores[key] * 100)}%</div>
+              <div className={styles.scoreImageWrap}>
+                <img
+                  src={archetypeImages[key]}
+                  alt={key}
+                  className={styles.scoreImage}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
